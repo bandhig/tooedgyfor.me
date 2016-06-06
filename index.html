@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -16,44 +15,144 @@
 <!-- HEADER -->
 <div id="header_wrap" class="outer">
     <header class="inner">
-        <a id="forkme_banner" href="https://github.com/The-Log">View me on GitHub</a>
+        <a id="forkme_banner" href="https://github.com/The-Log">View my GitHub</a>
 
         <h1 id="project_title">tooedgyfor.me</h1>
         <h2 id="project_tagline">only for edgelords</h2>
     </header>
 </div>
 
-<!-- MAIN CONTENT -->
-<div id="main_content_wrap" class="outer">
-    <section id="main_content" class="inner">
-        <h1>
-            <a id="too-edgy-for-me" class="anchor" href="#too-edgy-for-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Too Edgy for Me</h1>
+<style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
 
-        <p>This page is only meant for true edgelords. You have been warned. It is not my fault if you drink bleach after entering this website.</p>
+    ul.tab {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
 
-        <h3>
-            <a id="feedback" class="anchor" href="feedback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feedback</h3>
-         <p> We have had brilliant feedback about the website from various individuals.  <p>
-        <blockquote>
-            <p>"This website gives me aids" - Henry </p>
-            </blockquote>
-        <blockquote>
-            <p>"Made me want to drink bleach" - Toeshal</p>
-            </blockquote>
-        <blockquote>
-            <p>"I had killer back pain, but after viewing this website, the pain just went away!" - Some Random Asshole </p>
-            </blockquote>
-        <blockquote>
-            <p>"You should hang yourself from the ceiling fan" - Bile Gayner </p>
-            </blockquote>    
+    /* Float the list items side by side */
+    ul.tab li {
+        float: left;
+    }
 
-        <h3>
-            <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+    /* Style the links inside the list items */
+    ul.tab li a {
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
+    }
 
-        <p>Website created by The Log (<a href="https://github.com/The-Log" class="user-mention">@The-Log</a>).</p>
-    </section>
+    /* Change background color of links on hover */
+    ul.tab li a:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    ul.tab li a:focus, .active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        background-color: #f1f1f1;
+    }
+</style>
+<body>
+
+<ul class="tab">
+    <li><a href="#" class="tablinks" onclick="openTab(event, 'Home')">Home</a></li>
+    <li><a href="#" class="tablinks" onclick="openTab(event, 'About')">About</a></li>
+    <li><a href="#" class="tablinks" onclick="openTab(event, 'Feedback')">Feedback</a></li>
+    <li><a href="#" class="tablinks" onclick="openTab(event, 'Contact Info')">Contact Info</a></li>
+</ul>
+
+<div id="Home" class="tabcontent">
+    <h3>Home</h3>
+    <p>I don't know what to put here. Hopefully some memes.</p>
 </div>
 
+<div id="About" class="tabcontent">
+    <h3>About</h3>
+    <p>This page is only meant for true edgelords. You have been warned. It is not my fault if you drink bleach after
+        entering this website.</p>
+    <h3>Author and Contributors</h3>
+    <p>This site was created by <a href="https://github.com/The-Log" class="user-mention"> @The-Log</a>, as a side
+        project. This site is also
+        maintained by <a href="https://github.com/edgelord" class="user-mention"> @edgelord.</a></p>
+</div>
+
+<div id="Feedback" class="tabcontent">
+    <h3>Feedback</h3>
+    <p> We have had brilliant feedback about the website from various individuals. </p>
+    <blockquote>
+        <p>"This website gives me aids" - Henry </p>
+        </blockquote>
+    <blockquote>
+        <p>"Made me want to drink bleach" - Toeshal</p>
+        </blockquote>
+    <blockquote>
+        <p>"I had killer back pain, but after viewing this website, the pain just went away!" - Some Random Asshole </p>
+        </blockquote>
+    <blockquote>
+        <p>"You should hang yourself from the ceiling fan" - Bile Gayner </p>
+        </blockquote>
+</div>
+
+<div id="Contact Info" class="tabcontent">
+    <h3>Contact Info</h3>
+    <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <label for="name">Your name:</label><br>
+            <input id="name" class="input" name="name" type="text" value="" size="30"><br>
+        </div>
+        <div class="row">
+            <label for="email">Your email:</label><br>
+            <input id="email" class="input" name="email" type="text" value="" size="30"><br>
+        </div>
+        <div class="row">
+            <label for="message">Your message:</label><br>
+            <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br>
+        </div>
+        <input type="hidden" name="action" value="submit">
+        <input id="submit_button" type="submit" value="Send email">
+    </form>
+</div>
+
+<script>
+    function autoTab(evt, tabName){
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+
+    }
+    function openTab(evt, tabName) {
+        
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", ""); //changes color of active tab
+        }
+        document.getElementById(tabName).style.display = "block"; // allows change of tab contant
+        evt.currentTarget.className += " active";
+    }
+</script>
 <!-- FOOTER  -->
 <div id="footer_wrap" class="outer">
     <footer class="inner">
@@ -61,7 +160,5 @@
     </footer>
 </div>
 
-
-
 </body>
-</html>
+</html> 
